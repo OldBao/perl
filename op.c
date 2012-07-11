@@ -3218,7 +3218,7 @@ S_fold_constants(pTHX_ register OP *o)
     PERL_ARGS_ASSERT_FOLD_CONSTANTS;
 
     if (!(PL_opargs[type] & OA_FOLDCONST))
-	goto nope;
+	return o;
 
     switch (type) {
     case OP_UCFIRST:
@@ -3233,14 +3233,14 @@ S_fold_constants(pTHX_ register OP *o)
     case OP_SPRINTF:
 	/* XXX what about the numeric ops? */
 	if (IN_LOCALE_COMPILETIME)
-	    goto nope;
+	    return o;
 	break;
     case OP_REPEAT:
-	if (o->op_private & OPpREPEAT_DOLIST) goto nope;
+	if (o->op_private & OPpREPEAT_DOLIST) return o;
     }
 
     if (PL_parser && PL_parser->error_count)
-	goto nope;		/* Don't try to run w/ errors */
+	return o;		/* Don't try to run w/ errors */
 
     for (curop = LINKLIST(o); curop != o; curop = LINKLIST(curop)) {
 	const OPCODE type = curop->op_type;
@@ -3250,7 +3250,7 @@ S_fold_constants(pTHX_ register OP *o)
 	    type != OP_NULL &&
 	    type != OP_PUSHMARK)
 	{
-	    goto nope;
+	    return o;
 	}
     }
 
@@ -3316,7 +3316,7 @@ S_fold_constants(pTHX_ register OP *o)
 	delete_eval_scope();
 
     if (ret)
-	goto nope;
+	return o;
 
 #ifndef PERL_MAD
     op_free(o);
@@ -3328,9 +3328,6 @@ S_fold_constants(pTHX_ register OP *o)
 	newop = newSVOP(OP_CONST, OPpCONST_FOLDED<<8, MUTABLE_SV(sv));
     op_getmad(o,newop,'f');
     return newop;
-
- nope:
-    return o;
 }
 
 static OP *
