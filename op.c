@@ -3272,7 +3272,9 @@ S_fold_constants(pTHX_ register OP *o)
     create_eval_scope(G_FAKINGEVAL);
 
     /* Verify that we don't need to save it:  */
-    assert(PL_curcop == &PL_compiling);
+    if (PL_curcop != &PL_compiling)
+        Perl_croak(aTHX_ "panic: fold_constants called when IN_PERL_COMPILETIME is false "
+                   "- the interpreter is still setup for runtime, not compile time");
     StructCopy(&PL_compiling, &not_compiling, COP);
     PL_curcop = &not_compiling;
     /* The above ensures that we run with all the correct hints of the
