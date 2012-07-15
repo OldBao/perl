@@ -308,10 +308,9 @@ struct regnode_charclass_class {
 #define ANYOF_NONBITMAP(node)	(ARG(node) != ANYOF_NONBITMAP_EMPTY)
 
 /* Flags for node->flags of ANYOF.  These are in short supply, so some games
- * are done to share them, as described below.  If necessary, the ANYOF_LOCALE
- * and ANYOF_CLASS bits could be shared with a space penalty for locale nodes,
- * but this isn't quite so easy, as the optimizer also uses ANYOF_CLASS.
- * Another option would be to push them into new nodes.  E.g. there could be an
+ * are done to share them, as described below.  Already, , the ANYOF_LOCALE
+ * and ANYOF_CLASS bits are shared with a space penalty for all locale nodes.
+ * An option would be to push them into new nodes.  E.g. there could be an
  * ANYOF_LOCALE node that would be in place of the flag of the same name.
  * The UNICODE_ALL bit could be freed up by resorting to creating a swash with
  * everything above 255 in it.  This introduces a performance penalty.
@@ -335,8 +334,9 @@ struct regnode_charclass_class {
 /* Set if this is a struct regnode_charclass_class vs a regnode_charclass.  This
  * is used for runtime \d, \w, [:posix:], ..., which are used only in locale
  * and the optimizer's synthetic start class.  Non-locale \d, etc are resolved
- * at compile-time */
-#define ANYOF_CLASS	 0x08
+ * at compile-time.  Now shared with ANYOF_LOCALE, forcing all locale nodes to
+ * be large */
+#define ANYOF_CLASS	 ANYOF_LOCALE
 #define ANYOF_LARGE      ANYOF_CLASS    /* Same; name retained for back compat */
 
 /* EOS, meaning that it can match an empty string too, is used for the
