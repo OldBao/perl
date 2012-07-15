@@ -12378,9 +12378,9 @@ parseit:
 	 * av[2] stores the multicharacter foldings, used later in
 	 *       regexec.c:S_reginclass().
 	 * av[3] stores the cp_list inversion list for use in addition or
-	 *       instead of av[0]; not used if av[1] isn't NULL
+	 *       instead of av[0]; used only if av[1] is NULL
 	 * av[4] is set if any component of the class is from a user-defined
-	 *       property; not used if av[1] isn't NULL */
+	 *       property; used only if av[1] is NULL */
 	AV * const av = newAV();
 	SV *rv;
 
