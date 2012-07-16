@@ -609,6 +609,16 @@ produce failed or incorrect matches [perl #114068].
 C<__SUB__> now works in a C<sort> block when the enclosing subroutine is
 predeclared with C<sub foo;> syntax [perl #113710].
 
+=item *
+
+Unicode properties only apply to Unicode code points, which leads to
+some subtleties when matched in regular expressions against non-Unicode
+code points.  There is a warning generated to draw your attention to
+this.  However, this warning was being generated under some
+circumstances when such code points were used in non-regular expression
+parts of Perl, or with non-Unicode properties inside regular
+expressions.  These are now fixed.
+
 =back
 
 =head1 Known Problems

@@ -171,6 +171,99 @@ chr(0x100000) =~ /\p{Any}/;
 chr(0x10FFFE) =~ /\p{Any}/;
 chr(0x10FFFF) =~ /\p{Any}/;
 chr(0x110000) =~ /\p{Any}/;
+chr(0x110010) =~ /\p{PosixWord}/;
+chr(0x110011) =~ /\P{PosixWord}/;
+chr(0x110012) =~ /\p{XPosixWord}/;
+chr(0x110013) =~ /\P{XPosixWord}/;
+chr(0x110014) =~ /\p{PosixAlnum}/;
+chr(0x110015) =~ /\P{PosixAlnum}/;
+chr(0x110016) =~ /\p{XPosixAlnum}/;
+chr(0x110017) =~ /\P{XPosixAlnum}/;
+chr(0x110018) =~ /\p{PosixSpace}/;
+chr(0x110019) =~ /\P{PosixSpace}/;
+chr(0x11001A) =~ /\p{XPosixSpace}/;
+chr(0x11001B) =~ /\P{XPosixSpace}/;
+chr(0x11001C) =~ /\p{PosixDigit}/;
+chr(0x11001D) =~ /\P{PosixDigit}/;
+chr(0x11001E) =~ /\p{XPosixDigit}/;
+chr(0x11001F) =~ /\P{XPosixDigit}/;
+chr(0x110020) =~ /\p{PosixAlpha}/;
+chr(0x110021) =~ /\P{PosixAlpha}/;
+chr(0x110022) =~ /\p{XPosixAlpha}/;
+chr(0x110023) =~ /\P{XPosixAlpha}/;
+chr(0x110024) =~ /\p{Ascii}/;
+chr(0x110025) =~ /\P{Ascii}/;
+chr(0x110026) =~ /\p{PosixCntrl}/;
+chr(0x110027) =~ /\P{PosixCntrl}/;
+chr(0x110028) =~ /\p{XPosixCntrl}/;
+chr(0x110029) =~ /\P{XPosixCntrl}/;
+chr(0x11002A) =~ /\p{PosixGraph}/;
+chr(0x11002B) =~ /\P{PosixGraph}/;
+chr(0x11002C) =~ /\p{XPosixGraph}/;
+chr(0x11002D) =~ /\P{XPosixGraph}/;
+chr(0x11002E) =~ /\p{PosixLower}/;
+chr(0x11002F) =~ /\P{PosixLower}/;
+chr(0x110030) =~ /\p{XPosixLower}/;
+chr(0x110031) =~ /\P{XPosixLower}/;
+chr(0x110032) =~ /\p{PosixPrint}/;
+chr(0x110033) =~ /\P{PosixPrint}/;
+chr(0x110034) =~ /\p{XPosixPrint}/;
+chr(0x110035) =~ /\P{XPosixPrint}/;
+chr(0x110036) =~ /\p{PosixPunct}/;
+chr(0x110037) =~ /\P{PosixPunct}/;
+chr(0x110038) =~ /\p{XPosixPunct}/;
+chr(0x110039) =~ /\P{XPosixPunct}/;
+chr(0x11003A) =~ /\p{PosixUpper}/;
+chr(0x11003B) =~ /\P{PosixUpper}/;
+chr(0x11003C) =~ /\p{XPosixUpper}/;
+chr(0x11003D) =~ /\P{XPosixUpper}/;
+chr(0x11003E) =~ /\p{PosixXdigit}/;
+chr(0x11003F) =~ /\P{PosixXdigit}/;
+chr(0x110040) =~ /\p{XPosixXdigit}/;
+chr(0x110041) =~ /\P{XPosixXdigit}/;
+chr(0x110042) =~ /\p{PerlSpace}/;
+chr(0x110043) =~ /\P{PerlSpace}/;
+chr(0x110044) =~ /\p{XPerlSpace}/;
+chr(0x110045) =~ /\P{XPerlSpace}/;
+chr(0x110046) =~ /\p{PosixBlank}/;
+chr(0x110047) =~ /\P{PosixBlank}/;
+chr(0x110048) =~ /\p{XPosixBlank}/;
+chr(0x110049) =~ /\P{XPosixBlank}/;
+# Only Unicode properties give non-Unicode warnings, currently some warnings are output twice
+chr(0x110050) =~ /\w/;
+chr(0x110051) =~ /\W/;
+chr(0x110052) =~ /\d/;
+chr(0x110053) =~ /\D/;
+chr(0x110054) =~ /\s/;
+chr(0x110055) =~ /\S/;
+chr(0x110056) =~ /[[:word:]]/;
+chr(0x110057) =~ /[[:^word:]]/;
+chr(0x110058) =~ /[[:alnum:]]/;
+chr(0x110059) =~ /[[:^alnum:]]/;
+chr(0x11005A) =~ /[[:space:]]/;
+chr(0x11005B) =~ /[[:^space:]]/;
+chr(0x11005C) =~ /[[:digit:]]/;
+chr(0x11005D) =~ /[[:^digit:]]/;
+chr(0x11005E) =~ /[[:alpha:]]/;
+chr(0x11005F) =~ /[[:^alpha:]]/;
+chr(0x110060) =~ /[[:ascii:]]/;
+chr(0x110061) =~ /[[:^ascii:]]/;
+chr(0x110062) =~ /[[:cntrl:]]/;
+chr(0x110063) =~ /[[:^cntrl:]]/;
+chr(0x110064) =~ /[[:graph:]]/;
+chr(0x110065) =~ /[[:^graph:]]/;
+chr(0x110066) =~ /[[:lower:]]/;
+chr(0x110067) =~ /[[:^lower:]]/;
+chr(0x110068) =~ /[[:print:]]/;
+chr(0x110069) =~ /[[:^print:]]/;
+chr(0x11006A) =~ /[[:punct:]]/;
+chr(0x11006B) =~ /[[:^punct:]]/;
+chr(0x11006C) =~ /[[:upper:]]/;
+chr(0x11006D) =~ /[[:^upper:]]/;
+chr(0x11006E) =~ /[[:xdigit:]]/;
+chr(0x11006F) =~ /[[:^xdigit:]]/;
+chr(0x110070) =~ /[[:blank:]]/;
+chr(0x110071) =~ /[[:^blank:]]/;
 no warnings 'utf8';
 chr(0xD7FF) =~ /\p{Any}/;
 chr(0xD800) =~ /\p{Any}/;
@@ -185,13 +278,200 @@ chr(0x100000) =~ /\p{Any}/;
 chr(0x10FFFE) =~ /\p{Any}/;
 chr(0x10FFFF) =~ /\p{Any}/;
 chr(0x110000) =~ /\p{Any}/;
+chr(0x110010) =~ /\p{PosixWord}/;
+chr(0x110011) =~ /\P{PosixWord}/;
+chr(0x110012) =~ /\p{XPosixWord}/;
+chr(0x110013) =~ /\P{XPosixWord}/;
+chr(0x110014) =~ /\p{PosixAlnum}/;
+chr(0x110015) =~ /\P{PosixAlnum}/;
+chr(0x110016) =~ /\p{XPosixAlnum}/;
+chr(0x110017) =~ /\P{XPosixAlnum}/;
+chr(0x110018) =~ /\p{PosixSpace}/;
+chr(0x110019) =~ /\P{PosixSpace}/;
+chr(0x11001A) =~ /\p{XPosixSpace}/;
+chr(0x11001B) =~ /\P{XPosixSpace}/;
+chr(0x11001C) =~ /\p{PosixDigit}/;
+chr(0x11001D) =~ /\P{PosixDigit}/;
+chr(0x11001E) =~ /\p{XPosixDigit}/;
+chr(0x11001F) =~ /\P{XPosixDigit}/;
+chr(0x110020) =~ /\p{PosixAlpha}/;
+chr(0x110021) =~ /\P{PosixAlpha}/;
+chr(0x110022) =~ /\p{XPosixAlpha}/;
+chr(0x110023) =~ /\P{XPosixAlpha}/;
+chr(0x110024) =~ /\p{Ascii}/;
+chr(0x110025) =~ /\P{Ascii}/;
+chr(0x110026) =~ /\p{PosixCntrl}/;
+chr(0x110027) =~ /\P{PosixCntrl}/;
+chr(0x110028) =~ /\p{XPosixCntrl}/;
+chr(0x110029) =~ /\P{XPosixCntrl}/;
+chr(0x11002A) =~ /\p{PosixGraph}/;
+chr(0x11002B) =~ /\P{PosixGraph}/;
+chr(0x11002C) =~ /\p{XPosixGraph}/;
+chr(0x11002D) =~ /\P{XPosixGraph}/;
+chr(0x11002E) =~ /\p{PosixLower}/;
+chr(0x11002F) =~ /\P{PosixLower}/;
+chr(0x110030) =~ /\p{XPosixLower}/;
+chr(0x110031) =~ /\P{XPosixLower}/;
+chr(0x110032) =~ /\p{PosixPrint}/;
+chr(0x110033) =~ /\P{PosixPrint}/;
+chr(0x110034) =~ /\p{XPosixPrint}/;
+chr(0x110035) =~ /\P{XPosixPrint}/;
+chr(0x110036) =~ /\p{PosixPunct}/;
+chr(0x110037) =~ /\P{PosixPunct}/;
+chr(0x110038) =~ /\p{XPosixPunct}/;
+chr(0x110039) =~ /\P{XPosixPunct}/;
+chr(0x11003A) =~ /\p{PosixUpper}/;
+chr(0x11003B) =~ /\P{PosixUpper}/;
+chr(0x11003C) =~ /\p{XPosixUpper}/;
+chr(0x11003D) =~ /\P{XPosixUpper}/;
+chr(0x11003E) =~ /\p{PosixXdigit}/;
+chr(0x11003F) =~ /\P{PosixXdigit}/;
+chr(0x110040) =~ /\p{XPosixXdigit}/;
+chr(0x110041) =~ /\P{XPosixXdigit}/;
+chr(0x110042) =~ /\p{PerlSpace}/;
+chr(0x110043) =~ /\P{PerlSpace}/;
+chr(0x110044) =~ /\p{XPerlSpace}/;
+chr(0x110045) =~ /\P{XPerlSpace}/;
+chr(0x110046) =~ /\p{PosixBlank}/;
+chr(0x110047) =~ /\P{PosixBlank}/;
+chr(0x110048) =~ /\p{XPosixBlank}/;
+chr(0x110049) =~ /\P{XPosixBlank}/;
+chr(0x110050) =~ /\w/;
+chr(0x110051) =~ /\W/;
+chr(0x110052) =~ /\d/;
+chr(0x110053) =~ /\D/;
+chr(0x110054) =~ /\s/;
+chr(0x110055) =~ /\S/;
+chr(0x110056) =~ /[[:word:]]/;
+chr(0x110057) =~ /[[:^word:]]/;
+chr(0x110058) =~ /[[:alnum:]]/;
+chr(0x110059) =~ /[[:^alnum:]]/;
+chr(0x11005A) =~ /[[:space:]]/;
+chr(0x11005B) =~ /[[:^space:]]/;
+chr(0x11005C) =~ /[[:digit:]]/;
+chr(0x11005D) =~ /[[:^digit:]]/;
+chr(0x11005E) =~ /[[:alpha:]]/;
+chr(0x11005F) =~ /[[:^alpha:]]/;
+chr(0x110060) =~ /[[:ascii:]]/;
+chr(0x110061) =~ /[[:^ascii:]]/;
+chr(0x110062) =~ /[[:cntrl:]]/;
+chr(0x110063) =~ /[[:^cntrl:]]/;
+chr(0x110064) =~ /[[:graph:]]/;
+chr(0x110065) =~ /[[:^graph:]]/;
+chr(0x110066) =~ /[[:lower:]]/;
+chr(0x110067) =~ /[[:^lower:]]/;
+chr(0x110068) =~ /[[:print:]]/;
+chr(0x110069) =~ /[[:^print:]]/;
+chr(0x11006A) =~ /[[:punct:]]/;
+chr(0x11006B) =~ /[[:^punct:]]/;
+chr(0x11006C) =~ /[[:upper:]]/;
+chr(0x11006D) =~ /[[:^upper:]]/;
+chr(0x11006E) =~ /[[:xdigit:]]/;
+chr(0x11006F) =~ /[[:^xdigit:]]/;
+chr(0x110070) =~ /[[:blank:]]/;
+chr(0x110071) =~ /[[:^blank:]]/;
 EXPECT
 Code point 0x110000 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 14.
+Code point 0x110010 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 15.
+Code point 0x110011 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 16.
+Code point 0x110011 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 16.
+Code point 0x110012 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 17.
+Code point 0x110013 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 18.
+Code point 0x110013 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 18.
+Code point 0x110014 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 19.
+Code point 0x110015 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 20.
+Code point 0x110015 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 20.
+Code point 0x110016 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 21.
+Code point 0x110017 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 22.
+Code point 0x110017 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 22.
+Code point 0x110018 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 23.
+Code point 0x110019 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 24.
+Code point 0x110019 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 24.
+Code point 0x11001A is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 25.
+Code point 0x11001B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 26.
+Code point 0x11001B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 26.
+Code point 0x11001C is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 27.
+Code point 0x11001D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 28.
+Code point 0x11001D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 28.
+Code point 0x11001E is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 29.
+Code point 0x11001F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 30.
+Code point 0x11001F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 30.
+Code point 0x110020 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 31.
+Code point 0x110021 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 32.
+Code point 0x110021 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 32.
+Code point 0x110022 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 33.
+Code point 0x110023 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 34.
+Code point 0x110023 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 34.
+Code point 0x110024 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 35.
+Code point 0x110025 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 36.
+Code point 0x110025 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 36.
+Code point 0x110026 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 37.
+Code point 0x110027 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 38.
+Code point 0x110027 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 38.
+Code point 0x110028 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 39.
+Code point 0x110029 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 40.
+Code point 0x110029 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 40.
+Code point 0x11002A is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 41.
+Code point 0x11002B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 42.
+Code point 0x11002B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 42.
+Code point 0x11002C is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 43.
+Code point 0x11002D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 44.
+Code point 0x11002D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 44.
+Code point 0x11002E is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 45.
+Code point 0x11002F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 46.
+Code point 0x11002F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 46.
+Code point 0x110030 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 47.
+Code point 0x110031 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 48.
+Code point 0x110031 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 48.
+Code point 0x110032 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 49.
+Code point 0x110033 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 50.
+Code point 0x110033 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 50.
+Code point 0x110034 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 51.
+Code point 0x110035 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 52.
+Code point 0x110035 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 52.
+Code point 0x110036 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 53.
+Code point 0x110037 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 54.
+Code point 0x110037 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 54.
+Code point 0x110038 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 55.
+Code point 0x110039 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 56.
+Code point 0x110039 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 56.
+Code point 0x11003A is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 57.
+Code point 0x11003B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 58.
+Code point 0x11003B is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 58.
+Code point 0x11003C is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 59.
+Code point 0x11003D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 60.
+Code point 0x11003D is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 60.
+Code point 0x11003E is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 61.
+Code point 0x11003F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 62.
+Code point 0x11003F is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 62.
+Code point 0x110040 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 63.
+Code point 0x110041 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 64.
+Code point 0x110041 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 64.
+Code point 0x110042 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 65.
+Code point 0x110043 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 66.
+Code point 0x110043 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 66.
+Code point 0x110044 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 67.
+Code point 0x110045 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 68.
+Code point 0x110045 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 68.
+Code point 0x110046 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 69.
+Code point 0x110047 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 70.
+Code point 0x110047 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 70.
+Code point 0x110048 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 71.
+Code point 0x110049 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 72.
+Code point 0x110049 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 72.
 ########
 use warnings 'utf8';
 chr(0x110000) =~ /\p{Any}/;
 no warnings 'non_unicode';
 chr(0x110000) =~ /\p{Any}/;
+EXPECT
+Code point 0x110000 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 2.
+########
+# TODO optimized regnode should still give warnings
+use warnings 'utf8';
+chr(0x110000) =~ /lb=cr/;
+no warnings 'non_unicode';
+chr(0x110000) =~ /lb=cr/;
 EXPECT
 Code point 0x110000 is not Unicode, all \p{} matches fail; all \P{} matches succeed at - line 2.
 ########

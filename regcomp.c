@@ -10997,6 +10997,9 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, U32 depth)
      * time */
     SV* swash = NULL;		/* Code points that match \p{} \P{} */
 
+    /* Set if a component of this character class came from \pP{ or \P{} */
+    bool has_p_or_P = FALSE;
+
     /* Set if a component of this character class is user-defined; just passed
      * on to the engine */
     bool has_user_defined_property = FALSE;
@@ -11168,6 +11171,9 @@ parseit:
                     SV** invlistsvp;
                     SV* invlist;
                     char* name;
+
+                    has_p_or_P = TRUE;
+
 		    if (UCHARAT(RExC_parse) == '^') {
 			 RExC_parse++;
 			 n--;
@@ -12358,6 +12364,10 @@ parseit:
 	}
 	SvREFCNT_dec(listsv);
         return ret;
+    }
+
+    if (has_p_or_P && ! has_user_defined_property) {
+        ANYOF_FLAGS(ret) |= ANYOF_WARN_SUPER;
     }
 
     /* If there is a swash and more than one element, we can't use the swash in
