@@ -10975,7 +10975,9 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, U32 depth)
     SV *listsv = NULL;
     STRLEN initial_listsv_len = 0; /* Kind of a kludge to see if it is more
 				      than just initialized.  */
-    SV* properties = NULL;    /* Code points that match \p{} \P{} */
+    SV* properties = NULL;    /* Code points that match \p{} \P{}, or that come
+                                 from e.g., [:word:], extended beyond the
+                                 Latin1 range */
     UV element_count = 0;   /* Number of distinct elements in the class.
 			       Optimizations may be possible if this is tiny */
     UV n;
@@ -11242,7 +11244,9 @@ parseit:
 
                         /* Invert if asking for the complement */
                         if (value == 'P') {
-			    _invlist_union_complement_2nd(properties, invlist, &properties);
+			    _invlist_union_complement_2nd(properties,
+                                                          invlist,
+                                                          &properties);
 
                             /* The swash can't be used as-is, because we've
 			     * inverted things; delay removing it to here after
